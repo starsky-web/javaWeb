@@ -1,0 +1,379 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>4、DOM对象 · JavaScript笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="05、事件.html" />
+    
+    
+    <link rel="prev" href="03、BOM对象.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">基础部分</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="01、JavaScript简介.html">
+            
+                <a href="01、JavaScript简介.html">
+            
+                    
+                    1、JavaScript简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="02、常用内置对象.html">
+            
+                <a href="02、常用内置对象.html">
+            
+                    
+                    2、常用内置对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="03、BOM对象.html">
+            
+                <a href="03、BOM对象.html">
+            
+                    
+                    3、BOM对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5" data-path="04、DOM对象.html">
+            
+                <a href="04、DOM对象.html">
+            
+                    
+                    4、DOM对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="05、事件.html">
+            
+                <a href="05、事件.html">
+            
+                    
+                    5、事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >4、DOM对象</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="4&#x3001;dom&#x5BF9;&#x8C61;">4&#x3001;DOM&#x5BF9;&#x8C61;</h1>
+<hr>
+<h1 id="1&#x3001;&#x6982;&#x5FF5;">1&#x3001;&#x6982;&#x5FF5;</h1>
+<p>Document object  model &#x6587;&#x6863;&#x5BF9;&#x8C61;&#x6A21;&#x578B;</p>
+<p>&#x5C06;&#x6807;&#x8BB0;&#x8BED;&#x8A00;&#x6587;&#x6863;&#x7684;&#x5404;&#x4E2A;&#x7EC4;&#x6210;&#x90E8;&#x5206;&#xFF0C;&#x5C01;&#x88C5;&#x4E3A;&#x5BF9;&#x8C61;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x5BF9;&#x8C61;&#xFF0C;&#x5BF9;&#x6807;&#x8BB0;&#x8BED;&#x8A00;&#x6587;&#x6863;&#x8FDB;&#x884C;CRUD&#x64CD;&#x4F5C;</p>
+<h1 id="2&#x3001;&#x6838;&#x5FC3;dom">2&#x3001;&#x6838;&#x5FC3;DOM</h1>
+<ol>
+<li>Document&#xFF1A;&#x6587;&#x6863;&#x5BF9;&#x8C61;</li>
+<li>Element&#xFF1A;&#x5143;&#x7D20;&#x5BF9;&#x8C61;</li>
+<li>Attribute&#xFF1A;&#x5C5E;&#x6027;&#x5BF9;&#x8C61;</li>
+<li>Text&#xFF1A;&#x6587;&#x672C;&#x5BF9;&#x8C61;</li>
+<li>Comment&#xFF1A;&#x6CE8;&#x91CA;&#x5BF9;&#x8C61;</li>
+<li>Node&#xFF1A;&#x8282;&#x70B9;&#x5BF9;&#x8C61;&#xFF0C;&#x5176;&#x4ED6;&#x4E94;&#x4E2A;&#x7684;&#x7236;&#x5BF9;&#x8C61;</li>
+</ol>
+<h1 id="3&#x3001;document&#x5BF9;&#x8C61;">3&#x3001;Document&#x5BF9;&#x8C61;</h1>
+<h2 id="31&#x3001;&#x521B;&#x5EFA;&#xFF08;&#x83B7;&#x53D6;&#xFF09;">3.1&#x3001;&#x521B;&#x5EFA;&#xFF08;&#x83B7;&#x53D6;&#xFF09;</h2>
+<p>&#x627E;HTML&#x6A21;&#x578B;&#x4E2D;&#xFF0C;DOM&#x6A21;&#x578B;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;Window&#x5BF9;&#x8C61;&#x6765;&#x83B7;&#x53D6;</p>
+<pre><code class="lang-javascript"><span class="hljs-built_in">window</span>.document
+<span class="hljs-built_in">document</span>
+</code></pre>
+<h2 id="32&#x3001;&#x65B9;&#x6CD5;">3.2&#x3001;&#x65B9;&#x6CD5;</h2>
+<p>&#x83B7;&#x53D6;Element&#x5BF9;&#x8C61;</p>
+<pre><code class="lang-JavaScript">getElementById():&#x6839;&#x636E;Id&#x5C5E;&#x6027;&#x503C;&#x83B7;&#x53D6;&#x5143;&#x7D20;&#x5BF9;&#x8C61;
+getElementsByTagName():&#x6839;&#x636E;&#x5143;&#x7D20;&#x540D;&#x79F0;&#x83B7;&#x53D6;&#x5143;&#x7D20;&#x5BF9;&#x8C61;&#xFF0C;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x6570;&#x7EC4;
+getElementsByClassName():&#x6839;&#x636E;&#x7C7B;&#x540D;&#x83B7;&#x53D6;&#x5143;&#x7D20;&#x5BF9;&#x8C61;
+getElementsByName():&#x6839;&#x636E;name&#x5C5E;&#x6027;&#x503C;&#x6765;&#x83B7;&#x53D6;&#x5BF9;&#x8C61;
+</code></pre>
+<p>&#x521B;&#x5EFA;&#x5176;&#x4ED6;DOM&#x5BF9;&#x8C61;</p>
+<pre><code class="lang-javascript">createAttribute(name)
+createComment()
+createElement()
+createTaxtNode()
+</code></pre>
+<h2 id="33&#x3001;&#x5C5E;&#x6027;">3.3&#x3001;&#x5C5E;&#x6027;</h2>
+<h3 id="331&#x3001;element&#x5143;&#x7D20;&#x5BF9;&#x8C61;">3.3.1&#x3001;Element&#x5143;&#x7D20;&#x5BF9;&#x8C61;</h3>
+<p><strong>1&#x3001;&#x83B7;&#x53D6;/&#x521B;&#x5EFA;</strong></p>
+<p>&#x901A;&#x8FC7;document&#x6765;&#x83B7;&#x53D6;&#x548C;&#x521B;&#x5EFA;</p>
+<p><strong>2&#x3001;&#x65B9;&#x6CD5;</strong></p>
+<ol>
+<li>removeAttribute()&#x5220;&#x9664;&#x5C5E;&#x6027;</li>
+<li>setAttribute()&#x8BBE;&#x7F6E;&#x5C5E;&#x6027;</li>
+</ol>
+<h3 id="332&#x3001;&#x8282;&#x70B9;&#x5BF9;&#x8C61;">3.3.2&#x3001;&#x8282;&#x70B9;&#x5BF9;&#x8C61;</h3>
+<p><strong>1&#x3001;&#x7279;&#x70B9;</strong></p>
+<p>&#x6240;&#x6709;DOM&#x5BF9;&#x8C61;&#x90FD;&#x53EF;&#x4EE5;&#x8BA4;&#x4E3A;&#x662F;&#x8282;&#x70B9;</p>
+<p><strong>2&#x3001;&#x65B9;&#x6CD5;</strong></p>
+<pre><code class="lang-javascript">appendChild():&#x5411;&#x8282;&#x70B9;&#x7684;&#x5B50;&#x8282;&#x70B9;&#x5217;&#x8868;&#x7684;&#x7ED3;&#x5C3E;&#x6DFB;&#x52A0;&#x65B0;&#x7684;&#x5B50;&#x8282;&#x70B9;
+removeChild():&#x5220;&#x9664;(&#x5E76;&#x8FD4;&#x56DE;)&#x5F53;&#x524D;&#x8282;&#x70B9;&#x7684;&#x6307;&#x5B9A;&#x5B50;&#x8282;&#x70B9;
+replaceChild():&#x7528;&#x65B0;&#x8282;&#x70B9;&#x66FF;&#x6362;&#x4E00;&#x4E2A;&#x5B50;&#x8282;&#x70B9;
+</code></pre>
+<p><strong>3&#x3001;&#x5C5E;&#x6027;</strong></p>
+<pre><code class="lang-javascript">parentNode &#x8FD4;&#x56DE;&#x8282;&#x70B9;&#x7684;&#x7236;&#x8282;&#x70B9;
+</code></pre>
+<h1 id="4&#x3001;html--dom">4&#x3001;HTML  DOM</h1>
+<h2 id="41&#x3001;&#x6807;&#x7B7E;&#x4F53;&#x7684;&#x8BBE;&#x7F6E;&#x548C;&#x83B7;&#x53D6;">4.1&#x3001;&#x6807;&#x7B7E;&#x4F53;&#x7684;&#x8BBE;&#x7F6E;&#x548C;&#x83B7;&#x53D6;</h2>
+<p>innerHTML</p>
+<h2 id="42&#x3001;&#x4F7F;&#x7528;html&#x5143;&#x7D20;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;">4.2&#x3001;&#x4F7F;&#x7528;HTML&#x5143;&#x7D20;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;</h2>
+<h2 id="43&#x3001;&#x63A7;&#x5236;&#x5143;&#x7D20;&#x6837;&#x5F0F;">4.3&#x3001;&#x63A7;&#x5236;&#x5143;&#x7D20;&#x6837;&#x5F0F;</h2>
+<p>1&#x3001;&#x4F7F;&#x7528;&#x5143;&#x7D20;&#x7684;style&#x5C5E;&#x6027;&#x6765;&#x8BBE;&#x7F6E;</p>
+<pre><code class="lang-javascript">&#x5982;
+div1.style.border = <span class="hljs-string">&quot;1px solid red&quot;</span>;
+</code></pre>
+<p>2&#x3001;&#x63D0;&#x524D;&#x5B9A;&#x4E49;&#x597D;&#x7C7B;&#x9009;&#x62E9;&#x5668;&#x7684;&#x6837;&#x5F0F;&#xFF0C;&#x901A;&#x8FC7;&#x5143;&#x7D20;&#x7684;ClassName&#x5C5E;&#x6027;&#x6765;&#x8BBE;&#x7F6E;&#x5176;Class&#x503C;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="03、BOM对象.html" class="navigation navigation-prev " aria-label="Previous page: 3、BOM对象">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="05、事件.html" class="navigation navigation-next " aria-label="Next page: 5、事件">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"4、DOM对象","level":"1.5","depth":1,"next":{"title":"5、事件","level":"1.6","depth":1,"path":"基础部分/05、事件.md","ref":"基础部分/05、事件.md","articles":[]},"previous":{"title":"3、BOM对象","level":"1.4","depth":1,"path":"基础部分/03、BOM对象.md","ref":"基础部分/03、BOM对象.md","articles":[]},"dir":"ltr"},"config":{"plugins":["summary","expandable-chapters","theme-comscore","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"JavaScript笔记","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"基础部分/04、DOM对象.md","mtime":"2020-06-06T14:47:40.296Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-06T14:48:43.021Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+
